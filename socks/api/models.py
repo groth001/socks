@@ -37,7 +37,6 @@ class Employee(models.Model):
 
     name = models.CharField(max_length=30)
     email = models.CharField(max_length=30)
-    password = models.CharField(max_length=300) #Store Hash
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     rank = models.CharField(max_length=30, choices=RANKS, default=NONE)
     shift = models.CharField(max_length=30, choices=SHIFTS, default=NONE)

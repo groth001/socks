@@ -10,7 +10,7 @@ class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
         fields = ['name', 'isrequired']
-        
+
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
@@ -19,4 +19,4 @@ class EventSerializer(serializers.ModelSerializer):
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ['name', 'email', 'password', 'team', 'rank', 'shift']
+        fields = ['name', 'email', 'team', 'rank', 'shift']
