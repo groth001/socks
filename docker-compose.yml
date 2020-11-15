@@ -1,20 +1,11 @@
-# @Author: Matthew Hale <matthale>
-# @Date:   2017-09-05T12:29:08-05:00
-# @Email:  mlhale@unomaha.edu
-# @Filename: docker-compose.yml
-# @Last modified by:   matthale
-# @Last modified time: 2018-09-06T15:21:50-05:00
-# @Copyright: Copyright (C) 2018 Matthew L. Hale
-
-
-
-version: "2"
+version: "3.8"
 services:
   nginx:
     image: nginx:latest
     restart: always
     ports:
       - "80:8000"
+      - "443:8443"
     volumes:
       - ./backend:/var/www/backend
       - ./prod/nginx:/etc/nginx/conf.d
@@ -24,11 +15,12 @@ services:
   django:
     build: .
     restart: always
-    command: bash -c "pip install escapejson && python manage.py makemigrations && python manage.py migrate && python manage.py migrate && gunicorn django_backend.wsgi -w 8 -t 300 -b 0.0.0.0:8000"
+    command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate"
     volumes:
-      - ./backend:/var/www/backend
+      - ./socks:/var/www/socks
     expose:
      - "8000"
+     - "8443"
     depends_on:
      - db
   db:
