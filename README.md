@@ -2,31 +2,41 @@
 Cyber attacks can occur at any time requiring a security operations center to be manned at all times to combat the threats they pose to an organization's IT assets. **SOCKS (Security Operations Center Kick-ass Scheduler)** enables SOC managers in a 24x7 environment to easily schedule and track employees to ensure all shifts and mandatory roles are covered.
 
 ## Installation
+Install [Docker](https://docs.docker.com/get-docker/)
+
+Install git
+
+Clone the repository:
 ```bash
-docker-build .
+git clone https://github.com/groth001/socks
+```
+
+Run the following commands:
+```bash
+docker-compose build
 docker-compose run django bash
-python manage.py migrate
-python manage.py createsuperuser
+python3 manage.py migrate
+python3 manage.py createsuperuser
+exit
 ```
 
 ## Getting Started
-To run my awesome app simply,
+To run SOCKS:
 ```bash
 docker-compose up
 ```
-See in-app menus for help with using specific features.
 
 # License
 [GNU General Public License v3.0](https://github.com/groth001/socks/blob/master/LICENSE)
 
 ## User Stories
 1. As a SOC subordinate employee, I want to view my team's shift and role assignments, so I know what to work on and when.   
-   
-   Acceptance Criteria: 
+
+   Acceptance Criteria:
    * A SOC employee can view the shift and role assignments for that employee's assigned team by selecting a day from the calendar.
 
 2. As a SOC team lead, I want to assign my subordinates to shifts and roles, so I can ensure delivery of service at required times.
-   
+
    Acceptance Criteria:
    * A SOC team lead can assign subordinate employees to a shift.
    * A SOC team lead can define roles for that lead's team and optionally set them as required.
@@ -40,7 +50,7 @@ See in-app menus for help with using specific features.
 
 4. As a SOC employee/team lead, I want to view shift/role assignments of other teams so I know who is available for cross-team collaboration.
 
-   Acceptance Criteria: 
+   Acceptance Criteria:
    * Any user can select the calendar for another team and view the shift and role assignments for any day.
 
 5. As a SOC team lead/supervisor, I want to view metrics of shift/role assignments so I can better understand how teams are operating.
@@ -72,7 +82,13 @@ See in-app menus for help with using specific features.
 ## Diagrams
 
 ### GUI Mockup
-![GUI Mockup](https://github.com/groth001/socks/blob/master/img/socks_gui_design.JPG)
+![Schedule GUI Mockup](https://github.com/groth001/socks/blob/master/img/socks_gui_mockup_schedule.JPG)
+
+![OOO GUI Mockup](https://github.com/groth001/socks/blob/master/img/socks_gui_mockup_ooo.JPG)
+
+![Assign GUI Mockup](https://github.com/groth001/socks/blob/master/img/socks_gui_mockup_assign.JPG)
+
+![Reports GUI Mockup](https://github.com/groth001/socks/blob/master/img/socks_gui_mockup_reports.JPG)
 
 ### Architecture Diagrams
 ![System Context Diagram](https://github.com/groth001/socks/blob/master/img/socks_architecture_system_context.JPG)
