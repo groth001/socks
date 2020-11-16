@@ -11,8 +11,8 @@ class Role(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=30)
-    starttime = DateTimeField(default=timezone.now)
-    endtime = DateTimeField(default=timezone.now)
+    starttime = models.DateTimeField(default=timezone.now)
+    endtime = models.DateTimeField(default=timezone.now)
 
 class Employee(models.Model):
     NONE = 'None'
@@ -20,9 +20,9 @@ class Employee(models.Model):
     SUPERVISOR = 'Supervisor'
 
     RANKS = [
-        (NONE = 'None'),
-        (TEAMLEAD = 'Team Lead'),
-        (SUPERVISOR = 'Supervisor'),
+        (NONE, 'None'),
+        (TEAMLEAD, 'Team Lead'),
+        (SUPERVISOR, 'Supervisor'),
     ]
 
     NIGHT = 'Night'
@@ -30,9 +30,9 @@ class Employee(models.Model):
     SWING = "Swing"
 
     SHIFTS = [
-        (NIGHT, "Night")
-        (DAY, "Day")
-        (SWING, "Swing")
+        (NIGHT, 'Night'),
+        (DAY, 'Day'),
+        (SWING, 'Swing'),
     ]
 
     name = models.CharField(max_length=30)
