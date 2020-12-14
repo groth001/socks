@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api'
-    'provider',
-    'provider.outh2',
 ]
 
 MIDDLEWARE = [
@@ -132,14 +130,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# youtube.com/watch?v=PFcnQbOfbUU
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ],
-
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.OAuth2Authentication'
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'api.rest_framework_config.CsrfExemptSessionAuthentication',
+        'rest_framework.authentication.SessionAuthenication'
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated'
+    ),
 }

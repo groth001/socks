@@ -6,6 +6,10 @@ from rest_framework import routers
 router = routers.DefaultRouter(trailing_slash=False)
 
 urlpatterns = [
+    #path('user', controllers.UserList.as_view()),
+    #path('user/<int:pk>', controllers.UserDetail.as_view()),
+    path('register', csrf_exempt(controllers.Register.as_view())),
+    path('session', csrf_exempt(controllers.Session.as_view())),
     path('team', controllers.TeamList.as_view()),
     path('team/<int:pk>', controllers.TeamDetail.as_view()),
     path('role', controllers.RoleList.as_view()),

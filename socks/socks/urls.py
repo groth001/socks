@@ -21,7 +21,6 @@ from api import urls as api_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('oauth2/', include('provider.oauth2.urls', namespace='oauth2')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/', include(api_urls)),
 ]
