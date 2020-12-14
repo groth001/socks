@@ -19,11 +19,11 @@ class Register(APIView):
     def post(self, request, *args, **kwargs):
         # Login
         username = request.POST.get('username') #you need to apply validators to these
-        print username
+        print(username)
         password = request.POST.get('password') #you need to apply validators to these
         email = request.POST.get('email') #you need to apply validators to these
 
-        print request.POST.get('username')
+        print(request.POST.get('username'))
         if User.objects.filter(username=username).exists():
             return Response({'username': 'Username is taken.', 'status': 'error'})
         elif User.objects.filter(email=email).exists():
@@ -32,7 +32,7 @@ class Register(APIView):
         #especially before you pass them in here
         newuser = User.objects.create_user(email=email, username=username, password=password)
 
-        return Response({'status': 'success', 'userid': newuser.id)
+        return Response({'status': 'success', 'userid': newuser.id})
 
 class Session(APIView):
     permission_classes = [IsAuthenticated]

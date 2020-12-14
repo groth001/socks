@@ -25,7 +25,7 @@ SECRET_KEY = '<secret key here>'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.63', 'localhost', 'django']
 
 
 # Application definition
@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'api.rest_framework_config.CsrfExemptSessionAuthentication',
-        'rest_framework.authentication.SessionAuthenication'
+        'rest_framework.authentication.SessionAuthentication'
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated'

@@ -1,7 +1,7 @@
 from django.urls import path
 from api import controllers
 from rest_framework import routers
-#from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
 
 router = routers.DefaultRouter(trailing_slash=False)
 
