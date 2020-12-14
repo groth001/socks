@@ -47,5 +47,8 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
+  //Django API
+  ENV.API_HOST = '<insert API URL here>'
+  
   return ENV;
 };

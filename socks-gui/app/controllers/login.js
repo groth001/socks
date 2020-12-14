@@ -19,6 +19,9 @@ export default class LoginController extends Controller {
 
     if (this.session.isAuthenticated) {
       // What to do with all this success?
+
+      // Need to log into the API before this
+      this.transitionToRoute('authenticated.schedule');
     }
   }
 
