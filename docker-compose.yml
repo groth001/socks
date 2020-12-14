@@ -7,9 +7,7 @@ services:
       - "80:8000"
       - "443:8443"
     volumes:
-      - ./socks:/var/www/socks
-      - ./prod/nginx:/etc/nginx/conf.d
-      - ./prod/logs:/var/logs/nginx
+      - ./socks-gui:/var/www/socks-gui
     depends_on:
       - django
   django:
