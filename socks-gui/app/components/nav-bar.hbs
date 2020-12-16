@@ -1,26 +1,7 @@
-<nav class="menu">
-  <LinkTo @route="index" class="menu-index">
-    <h1>SOCKS</h1>
-  </LinkTo>
-  <div class="links">
-    <LinkTo @route="schedule" class="menu-schedule">
-      Schedule
-    </LinkTo>
-    <LinkTo @route="ooo" class="menu-ooo">
-      OOO
-    </LinkTo>
-    <LinkTo @route="assign" class="menu-assign">
-      Assign
-    </LinkTo>
-    <LinkTo @route="reports" class="menu-reports">
-      Reports
-    </LinkTo>
-  </div>
-  <div>
-    {{#if this.session.isAuthenticated}}
-      <a {{on "click" this.invalidateSession}}>Logout</a>
-    {{else}}
-      {{#link-to 'login'}}Login{{/link-to}}
-    {{/if}}
-  </div>
-</nav>
+<div class="nav">
+  {{#link-to 'index' class="nav-item"}}SOCKS{{/link-to}}
+  {{#link-to 'schedule' class="nav-item"}}Schedule{{/link-to}}
+  {{#link-to 'ooo' class="nav-item"}}OOO{{/link-to}}
+  {{#link-to 'assign' class="nav-item"}}Assign{{/link-to}}
+  {{#link-to 'reports' class="nav-item"}}Reports{{/link-to}}
+</div>
