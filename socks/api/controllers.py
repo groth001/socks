@@ -13,7 +13,7 @@ from rest_framework.authentication import *
 
 # Create your views here.
 class Register(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     #permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
@@ -35,7 +35,7 @@ class Register(APIView):
         return Response({'status': 'success', 'userid': newuser.id})
 
 class Session(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     #permission_classes = (AllowAny,)
     def form_response(self, isauthenticated, userid, username, error=""):
         data = {
