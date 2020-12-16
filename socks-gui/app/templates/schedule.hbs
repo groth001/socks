@@ -1,8 +1,9 @@
-<div class='schedule-calendar'>
-  <PowerCalendar
-    @selected={{selected}}
-    @onSelect={{action (mut selected) value="date"}} as |calendar|>
-    <calendar.Nav/>
-    <calendar.Days/>
-  </PowerCalendar>
-</div>
+<PowerCalendar class="schedule-calendar"
+  @center={{month}}
+  @onCenterChange={{action (mut month) value="date"}}
+  @selected={{selected}}
+  @onSelect={{action (mut selected) value="date"}} as |calendar|>
+
+  <calendar.Nav/>
+  <calendar.Days/>
+</PowerCalendar>

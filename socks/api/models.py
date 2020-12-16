@@ -11,7 +11,7 @@ class Role(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=30)
-    starttime = models.DateTimeField(default=timezone.now)
+    starttime = models.DateTimeField(default=timezone.now) # maybe only need date
     endtime = models.DateTimeField(default=timezone.now)
 
 class Employee(models.Model):

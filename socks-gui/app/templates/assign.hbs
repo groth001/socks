@@ -1,0 +1,9 @@
+<PowerCalendar class="assign-calendar"
+  @center={{month}}
+  @onCenterChange={{action (mut month) value="date"}}
+  @selected={{selected}}
+  @onSelect={{action (mut selected) value="date"}} as |calendar|>
+
+  <calendar.Nav/>
+  <calendar.Days @minDate={{minDate}} />
+</PowerCalendar>
