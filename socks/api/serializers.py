@@ -15,7 +15,7 @@ class TeamSerializer(serializers.ModelSerializer):
 class ShifteventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shiftevent
-        fields = ['name', 'role', 'date']
+        fields = ['date', 'name', 'role']
 
 class OooeventSerializer(serializers.ModelSerializer):
     class Meta:

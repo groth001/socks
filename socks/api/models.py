@@ -6,9 +6,9 @@ class Team(models.Model):
     name = models.CharField(max_length=30)
 
 class Shiftevent(models.Model):
+    date = models.DateField(default=date.today)
     name = models.CharField(max_length=30)
     role = models.CharField(max_length=30, default='Other')
-    date = models.DateField(default=date.today)
 
 class Oooevent(models.Model):
     date = models.DateField(default=date.today)
