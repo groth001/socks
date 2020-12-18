@@ -1,5 +1,15 @@
-import Model from '@ember-data/model';
+//import Model from '@ember-data/model';
 
-export default class EmployeeListModel extends Model {
+//export default class EmployeeListModel extends Model {
 
-}
+//}
+
+import DS from 'ember-data';
+
+export default DS.Model.extend({
+  name: DS.attr(),
+  email: DS.attr(),
+  team: DS.attr(),
+  rank: DS.attr(),
+  shift: DS.attr(),
+});
