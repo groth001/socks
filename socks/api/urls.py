@@ -12,8 +12,10 @@ urlpatterns = [
     path('session', csrf_exempt(controllers.Session.as_view())),
     path('teams', controllers.TeamList.as_view()),
     path('teams/<int:pk>', controllers.TeamDetail.as_view()),
-    path('events', controllers.EventList.as_view()),
-    path('events/<int:pk>', controllers.EventDetail.as_view()),
+    path('shiftevents', controllers.ShifteventList.as_view()),
+    path('shiftevents/<int:pk>', controllers.ShifteventDetail.as_view()),
+    path('oooevents', controllers.OooeventList.as_view()),
+    path('oooevents/<int:pk>', controllers.OooeventDetail.as_view()),
     path('employees', controllers.EmployeeList.as_view()),
     path('employees/<int:pk>', controllers.EmployeeDetail.as_view()),
 ]
