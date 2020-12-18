@@ -1,18 +1,20 @@
 from django.db import models
-from django.utils import timezone
+from datetime import date
 
 # Create your models here.
 class Team(models.Model):
     name = models.CharField(max_length=30)
 
-class Role(models.Model):
+class Shiftevent(models.Model):
     name = models.CharField(max_length=30)
-    isrequired = models.BooleanField()
+    role = models.CharField(max_length=30, default='Other')
+    date = models.DateField(default=date.today)
 
-class Event(models.Model):
+class Oooevent(models.Model):
+    date = models.DateField(default=date.today)
     name = models.CharField(max_length=30)
-    starttime = models.DateTimeField(default=timezone.now) # maybe only need date
-    endtime = models.DateTimeField(default=timezone.now)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    reason = models.CharField(max_length=30);
 
 class Employee(models.Model):
     NONE = 'None'
