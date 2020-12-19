@@ -7,10 +7,11 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-  this.route('login');
   this.route('index');
   this.route('schedule');
   this.route('ooo', { path: '/out-of-office' });
   this.route('assign');
   this.route('reports');
+  this.route('create-oooevent');
+  this.route('create-shiftevent');
 });

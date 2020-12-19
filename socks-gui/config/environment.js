@@ -48,7 +48,7 @@ module.exports = function(environment) {
   }
 
   //Django API
-  ENV.API_HOST = '<insert API URL here>'
-  
+  ENV.API_HOST = 'http://localhost:8000'
+
   return ENV;
 };

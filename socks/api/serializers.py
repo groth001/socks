@@ -12,15 +12,15 @@ class TeamSerializer(serializers.ModelSerializer):
         model = Team
         fields = ['name']
 
-class RoleSerializer(serializers.ModelSerializer):
+class ShifteventSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Role
-        fields = ['name', 'isrequired']
+        model = Shiftevent
+        fields = ['date', 'name', 'role']
 
-class EventSerializer(serializers.ModelSerializer):
+class OooeventSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Event
-        fields = ['name', 'starttime', 'endtime']
+        model = Oooevent
+        fields = ['date', 'name', 'team', 'reason']
 
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:

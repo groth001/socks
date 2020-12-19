@@ -115,84 +115,85 @@ class TeamDetail(APIView):
         team.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-class RoleList(APIView):
+
+class ShifteventList(APIView):
     """
-    List all Roless, or create a new Role.
+    List all Event, or create a new Event.
     """
     def get(self, request, format=None):
-        roles = Role.objects.all()
-        serializer = RoleSerializer(roles, many=True)
+        events = Shiftevent.objects.all()
+        serializer = ShifteventSerializer(events, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = RoleSerializer(data=request.data)
+        serializer = ShifteventSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class RoleDetail(APIView):
+class ShifteventDetail(APIView):
     """
-    Retrieve, update or delete a Role.
+    Retrieve, update or delete a Event.
     """
     def get_object(self, pk):
        try:
-           return Role.objects.get(pk=pk)
-       except Role.DoesNotExist:
+           return Shiftevent.objects.get(pk=pk)
+       except Shiftevent.DoesNotExist:
            raise Http404
 
     def get(self, request, pk, format=None):
-        role = self.get_object(pk)
-        serializer = RoleSerializer(role)
+        event = self.get_object(pk)
+        serializer = ShifteventSerializer(event)
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
-        role = self.get_object(pk)
-        serializer = RoleSerializer(role, data=request.data)
+        event = self.get_object(pk)
+        serializer = ShifteventSerializer(event, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
-        role = self.get_object(pk)
-        role.delete()
+        event = self.get_object(pk)
+        event.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-class EventList(APIView):
+class OooeventList(APIView):
     """
     List all Event, or create a new Event.
     """
     def get(self, request, format=None):
-        events = Event.objects.all()
-        serializer = EventSerializer(events, many=True)
+        events = Shiftevent.objects.all()
+        serializer = ShifteventSerializer(events, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = EventSerializer(data=request.data)
+        serializer = ShifteventSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class EventDetail(APIView):
+class OooeventDetail(APIView):
     """
     Retrieve, update or delete a Event.
     """
     def get_object(self, pk):
        try:
-           return Event.objects.get(pk=pk)
-       except Event.DoesNotExist:
+           return Oooevent.objects.get(pk=pk)
+       except Oooevent.DoesNotExist:
            raise Http404
 
     def get(self, request, pk, format=None):
         event = self.get_object(pk)
-        serializer = EventSerializer(team)
+        serializer = OooeventSerializer(event)
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
         event = self.get_object(pk)
-        serializer = EventSerializer(event, data=request.data)
+        serializer = OooeventSerializer(event, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
