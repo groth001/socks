@@ -1,1 +1,8 @@
-{{yield}}
+{{input date='date' value=@oooevent.date placeholder='Enter date' class="form"}}
+{{input name='name' value=@oooevent.name placeholder='Enter employee name' class="form"}}
+{{input team='team' value=@oooevent.team placeholder='Enter team' class="form"}}
+{{input reason='reason' value=@oooevent.reason placeholder='Enter reason' class="form"}}
+
+<div class="submit-button">
+  <button {{action 'create'}}>Submit</button>
+</div>

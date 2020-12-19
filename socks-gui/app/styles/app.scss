@@ -1,11 +1,14 @@
 @import "ember-power-calendar";
+@import "ember-power-datepicker";
 
 .schedule-calendar {
   @include ember-power-calendar($cell-size: 70px);
+  padding: 30px;
 }
 
 .assign-calendar {
   @include ember-power-calendar($cell-size: 70px);
+  padding: 30px;
 }
 
 :root {
@@ -42,7 +45,7 @@ body {
 .nav {
   display: flex;
   padding: 0 10px;
-  background-color: var(--color-purple);
+  background-color: var(--color-red);
   box-shadow: var(--box-shadow);
   z-index: 10;
 }
@@ -62,8 +65,7 @@ body {
   padding: 10px 20px;
   background: var(--color-white);
 }
-input[type='text'],
-textarea {
+input[type='text'] {
   margin: 10px 0;
   padding: 10px;
   max-width: 500px;
@@ -71,4 +73,16 @@ textarea {
   border: none;
   border-bottom: 1px solid var(--color-grey);
   outline: 0;
+}
+
+.submit-button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

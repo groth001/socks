@@ -4,6 +4,15 @@
   @selected={{selected}}
   @onSelect={{action (mut selected) value="date"}} as |calendar|>
 
-  <calendar.Nav/>
-  <calendar.Days/>
+  <calendar.Nav />
+  <calendar.Days />
 </PowerCalendar>
+
+
+<div class="container">
+  {{#each model as |shiftevent|}}
+    <div>
+      <Assignment @ShifteventList={{shiftevent}} />
+    </div>
+  {{/each}}
+</div>

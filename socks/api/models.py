@@ -14,7 +14,7 @@ class Oooevent(models.Model):
     date = models.DateField(default=date.today)
     name = models.CharField(max_length=30)
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    reason = models.CharField(max_length=30);
+    reason = models.CharField(max_length=30)
 
 class Employee(models.Model):
     NONE = 'None'
